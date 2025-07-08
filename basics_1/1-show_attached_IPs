@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Show all attached IPv4 IPs
 
-ip -a -4 addr show | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
+ifconfig -a | grep 'inet' | awk '{print $2}'
